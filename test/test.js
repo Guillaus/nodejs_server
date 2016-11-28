@@ -51,7 +51,9 @@ describe('#GetBelow0', function() {
         todo_utils._add('Another thing', (todoList) => {});
 
         assert.throws(function() {
-                todo_utils._get(-1);
+                todo_utils._get(-1, function(list) {
+                    console.log(list);
+                });
         }, /bad id/)
     });
 });
