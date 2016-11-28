@@ -1,8 +1,3 @@
-# Specify that we will use docker
-machine:
-  services:
-    - docker
-
 # Specify that we will firstly run our project (in daemon mode)
 # and finally use mocha to run the test suit.
 test:
