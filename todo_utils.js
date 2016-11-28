@@ -46,7 +46,7 @@ module.exports = {
         if (todo == null) {
             throw new Error('todo is null');
         }
-        if (id >= todo.length) {
+        if (id >= todo.length || id < 0) {
             throw new Error('bad id');
         }
         cb(todo[id]);
