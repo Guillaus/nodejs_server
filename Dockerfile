@@ -2,7 +2,7 @@
 FROM node:argon
 
 # Create the directory '/usr/src/app'.
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app/
 
 # Make '/usr/src/app' the working directory.
 # It's important to specify a 'WORKDIR' because
