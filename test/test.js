@@ -141,3 +141,34 @@ describe('# Check success', function() {
         todo_utils._init();
     });
 });
+
+describe('#Delete', function() {
+    it('todo_utils._delete(1) should return : A good thing', function () {
+        todo_utils._init();
+        todo_utils._new();
+        todo_utils._add('A thing', (todoList) => {});
+        todo_utils._add('A good thing', (todoList) => {});
+        todo_utils._add('Another thing', (todoList) => {});
+
+        todo_utils._del(1, function (deleted) {
+            assert.equal(1, deleted.length);
+            assert.equal('A good thing', deleted[0]);
+        });
+
+    });
+});
+
+describe('#GetBelow0', function() {
+    it('todo_utils._get(-1) shoud throw an error : bad id', function() {
+
+        todo_utils._init();
+        todo_utils._new();
+        todo_utils._add('A thing', (todoList) => {});
+        todo_utils._add('A good thing', (todoList) => {});
+        todo_utils._add('Another thing', (todoList) => {});
+
+        assert.throws(function() {
+                todo_utils._get(-1);
+        }, /bad id/)
+    });
+});
