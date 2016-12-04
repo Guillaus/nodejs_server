@@ -5,4 +5,10 @@ machine:
 test:
   override:
     - docker-compose up -d
-    - mocha 
+    - mocha
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - $DEPLOY
