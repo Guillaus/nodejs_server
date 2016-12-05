@@ -1,4 +1,24 @@
-server:         # Build the 'server' image
-  build: ./     # Use the Dockerfile of the current directory
-  ports:        # Bind the port 80 of the host with
-    - "8080:8080" # the port 8080 exposed by the container
+server1:
+  build: ./
+  ports: 
+    - "8080"
+
+server2:
+  build: ./
+  ports: 
+    - "8080"
+
+server3:
+  build: ./
+  ports: 
+    - "8080"
+
+nginx:
+  build: ./nginx
+  links:
+    - server1
+    - server2
+    - server3
+  ports:
+    - "8081:80"
+
