@@ -158,7 +158,7 @@ describe('#Delete', function() {
     });
 });
 
-describe('#GetBelow0', function() {
+describe('#Get', function() {
     it('todo_utils._get(-1) shoud throw an error : bad id', function() {
 
         todo_utils._init();
